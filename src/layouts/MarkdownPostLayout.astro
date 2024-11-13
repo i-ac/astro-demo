@@ -1,0 +1,13 @@
+---
+import BaseLayout from './BaseLayout.astro';
+const { frontmatter } = Astro.props;
+---
+<BaseLayout pageTitle={frontmatter.title}>
+    <!-- <h1>{frontmatter.title}</h1> -->
+     <!-- if baselayout is added to have the navigation, styling and h1 you have h1 double so h1 is not need here anymore since you pass down the page title in the baselayout tag and h1 is in there.-->
+    <p>{frontmatter.pubDate.toString().slice(0,10)}</p>
+    <p><em>{frontmatter.description}</em></p>
+    <p>Written by: {frontmatter.author}</p>
+    <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
+    <slot />
+</BaseLayout>
