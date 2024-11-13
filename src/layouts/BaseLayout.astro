@@ -10,12 +10,13 @@ const { pageTitle } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <link
+    <!-- added this in to check if RSS feed would work in an online free reader if you put the url (to the home page) of the website. it doesn't work. RSS Feed currently not pulling the blog posts from the rss xml file in Feedly, an online RSS Feed Reader, with or without this anabling link set up. and with or without just the url to the home page or the url/rss.xml-->
+    <!-- <link
         rel="alternate"
         type="application/rss+xml"
         title="Your Site's Title"
         href={new URL("rss.xml", Astro.site)}
-    />
+    /> -->
     <title>{pageTitle}</title>
   </head>
   <body>
